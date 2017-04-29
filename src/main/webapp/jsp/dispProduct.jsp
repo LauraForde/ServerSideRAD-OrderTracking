@@ -5,7 +5,7 @@
 	<head>
 		<style>
 			table, th, td {
-				border: 1px solid black;
+				border: 2px solid black;
 			}
 		</style>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
