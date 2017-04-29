@@ -9,10 +9,9 @@
 			}
 		</style>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Products</title>
+		<title>List of Products</title>
 		</head>
 	<body>
-	<h1>List of Products</h1>
 	<table>
 		<tr>
 			<th>Product ID</th>

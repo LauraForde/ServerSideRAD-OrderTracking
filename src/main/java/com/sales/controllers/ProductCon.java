@@ -24,7 +24,7 @@ public class ProductCon {
 		ArrayList<Product> products = productS.getAll();
 
 		for (Product p1 : products) {
-			System.out.println("name = " + p1.getpId() );
+			System.out.println("name=" + p1.getpId() );
 		}
 
 		m.addAttribute("products", products);
