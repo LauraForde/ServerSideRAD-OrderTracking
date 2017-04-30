@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.sales.models.Customer;
 
-	@Repository
-	public interface CustomerInter extends CrudRepository<Customer, Long> {
-	
-	}
+@Repository
+public interface CustomerInter extends CrudRepository<Customer, Long> {
+
+}

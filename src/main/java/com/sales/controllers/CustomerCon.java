@@ -30,7 +30,7 @@ public class CustomerCon {
 			}
 		}
 
-		m.addAttribute("customer", customers);
+		m.addAttribute("customers", customers);
 
 		return "dispCustomer";
 	}
