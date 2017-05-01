@@ -18,45 +18,40 @@ import com.sales.services.OrderSer;
 
 @Controller
 public class OrderCon {
-	
+
 @Autowired OrderSer orderS;
 	
+	// Show all orders in the database
 	@RequestMapping (value = "/showOrders", method = RequestMethod.GET)
 	public String showOrder(Model m) {
 
+		// Get all info from orders array
 		ArrayList<Order> orders = orderS.getAll();
-
-		for (Order o1 : orders) {
-			System.out.println("name=" + o1.getoId() );
-		}
-
 		m.addAttribute("orders", orders);
 
+		// Display all orders
 		return "dispOrder";
 	}
 	
+	// Getting the info entered into the add page
 	@RequestMapping(value="/addOrder", method=RequestMethod.GET)
 	public String getOrder(@ModelAttribute("ord") Order order, BindingResult bind, HttpServletRequest req, Model m){
-		System.out.println("Request = " + req.getMethod());
+		
+		// Show add order page
 		return "addOrder";
 	}
 
 	@RequestMapping(value = "/addOrder", method = RequestMethod.POST)
 	public String postCustomer(@Valid @ModelAttribute("ord") Order order, BindingResult bind, HttpServletRequest req, Model m){
-
-
-		System.out.println("HTTP Request = " + req.getMethod());
-
+		
+		// Save
 		orderS.save(order);
 
+		// Get all from the array
 		ArrayList<Order> orders = orderS.getAll();
-
-		for (Order o1 : orders) {
-			System.out.println("name=" + o1.getoId());
-		}
-
 		m.addAttribute("orders", orders);
 
+		// Display all orders
 		return "dispOrder";
 	}
 }

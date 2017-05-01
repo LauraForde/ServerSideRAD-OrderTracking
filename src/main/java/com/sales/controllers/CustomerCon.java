@@ -25,43 +25,32 @@ public class CustomerCon {
 	@RequestMapping (value = "/showCustomers", method = RequestMethod.GET)
 	public String showCustomer(Model m) {
 
+		// Get all info in the customer array
 		ArrayList<Customer> customers = customerS.getAll();
-
-		for (Customer c1 : customers) {
-			System.out.println("name=" + c1.getcId() );
-			
-			for (Order o1 : c1.getOrders() ) {
-				System.out.println("Oid=" + o1.getoId());
-			}
-		}
-
 		m.addAttribute("customers", customers);
 
+		// Display all customers
 		return "dispCustomer";
 	}
 	
 	@RequestMapping(value="/addCustomer", method=RequestMethod.GET)
 	public String getCustomer(@ModelAttribute("cust") Customer customer, BindingResult bind, HttpServletRequest req, Model m){
-		System.out.println("Request = " + req.getMethod());
+
+		// Show add customer page
 		return "addCustomer";
 	}
 
 	@RequestMapping(value = "/addCustomer", method = RequestMethod.POST)
 	public String postCustomer(@Valid @ModelAttribute("cust") Customer customer, BindingResult bind, HttpServletRequest req, Model m){
-
-
-		System.out.println("HTTP Request = " + req.getMethod());
-
+		
+		// Save
 		customerS.save(customer);
 
+		// Get all info from customers array
 		ArrayList<Customer> customers = customerS.getAll();
-
-		for (Customer c1 : customers) {
-			System.out.println("name=" + c1.getcId());
-		}
-
 		m.addAttribute("customers", customers);
 
+		// Display all customers
 		return "dispCustomer";
 	}
 }

@@ -14,10 +14,12 @@ public class CustomerSer {
 	@Autowired
 	private CustomerInter customerInter;
 	
+	// Saving info passed in from controller
 	public Customer save(Customer customer){
 		return customerInter.save(customer);
 	}
 	
+	// Get all info for customer
 	public ArrayList<Customer> getAll(){
 		return (ArrayList<Customer>) customerInter.findAll();
 	}

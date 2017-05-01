@@ -11,13 +11,13 @@ public class SecurityLogin extends WebSecurityConfigurerAdapter{
 	
 	@Override
 	public void configure(HttpSecurity httpSecurity) throws Exception {
+		// Security, saying user has to log in when wanting to access any of these pages
 		httpSecurity.authorizeRequests().antMatchers("/showProducts", "/showCustomers", "/showOrders", "/addOrder",
 				"/addProduct", "/addCustomer").hasRole("USER").and().formLogin();
 	}
 
 	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth)
-
 			throws Exception {
 		auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
 	}
