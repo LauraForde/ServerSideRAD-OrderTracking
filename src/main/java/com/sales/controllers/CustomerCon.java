@@ -41,7 +41,7 @@ public class CustomerCon {
 	}
 	
 	@RequestMapping(value="/addCustomer", method=RequestMethod.GET)
-	public String getProduct(@ModelAttribute("cust") Customer customer, BindingResult bind, HttpServletRequest req, Model m){
+	public String getCustomer(@ModelAttribute("cust") Customer customer, BindingResult bind, HttpServletRequest req, Model m){
 		System.out.println("Request = " + req.getMethod());
 		return "addCustomer";
 	}

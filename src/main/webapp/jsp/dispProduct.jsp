@@ -33,6 +33,5 @@
 	<a href="/addProduct">Add Product</a>
 	<a href="/showCustomers">List Customers</a>
 	<a href="/showOrders">List Orders</a>
-	<a href="/logout">Logout</a>
 </body>
 </html>
