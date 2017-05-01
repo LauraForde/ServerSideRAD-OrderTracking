@@ -31,5 +31,29 @@ public class ProductCon {
 
 		return "dispProduct";
 	}
+	
+	@RequestMapping(value="/addProduct", method=RequestMethod.GET)
+	public String getProduct(@ModelAttribute("prod") Product product, BindingResult bind, HttpServletRequest req, Model m){
+		System.out.println("Request = " + req.getMethod());
+		return "addProduct";
+	}
 
+	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
+	public String postProduct(@Valid @ModelAttribute("prod") Product product, BindingResult bind, HttpServletRequest req, Model m){
+
+
+		System.out.println("HTTP Request = " + req.getMethod());
+
+		productS.save(product);
+
+		ArrayList<Product> products = productS.getAll();
+
+		for (Product p1 : products) {
+			System.out.println("name=" + p1.getpId());
+		}
+
+		m.addAttribute("products", products);
+
+		return "dispProduct";
+	}
 }
