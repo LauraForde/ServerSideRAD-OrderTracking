@@ -36,8 +36,8 @@
 		</table>
 	</c:forEach>
 	<a href="/">Home</a>
-	<a href="/addCustomers">Add Customer</a>
-	<a href="/showProducts">List Products</a>
+	<a href="/addCustomer">Add Customer</a>
+	<a href="/showProduct">List Products</a>
 	<a href="/showOrders">List Orders</a>
 </body>
 </html>
